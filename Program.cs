@@ -16,24 +16,32 @@ _ ___ ____ _  _    _  _ _  _ _    ____ ____ _  _ ____ ____
 |  |  |___ |  |    |__| | \| |___ |__| |___ | \_ |___ |  \   made by Cracky0001
                                                                                          
 ");
-        
-        string path = Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\AppData\LocalLow\Endnight\SonsOfTheForest\Saves");
-        string[] saveFiles = Directory.GetFiles(path, "PlayerInventorySaveData.json", SearchOption.AllDirectories);
-        if (saveFiles.Length == 0)
-        {
-            Console.WriteLine("Keine PlayerInventorySaveData.json-Dateien gefunden.");
-            return;
-        }
 
         WebClient webClient = new();
         string data = webClient.DownloadString("https://raw.githubusercontent.com/Cracky0001/SOTF_ItemUnlockAll/main/Content/PlayerInventorySaveData.json"); // vll hier custom files supporten statt deine forcen zu downloaden
 
-        foreach (string saveFile in saveFiles)
+        string path = Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\AppData\LocalLow\Endnight\SonsOfTheForest\Saves");
+        string[] directories = Directory.GetDirectories(path);
+
+        Console.WriteLine("Wie lautet deine SaveGame ID? Du findest sie unter C:\\Users\\(Dein Name)\\AppData\\LocalLow\\Endnight\\SonsOfTheForest\\Saves\\(Deine ID)\\MultiplayerClient");
+        string SaveGameId = Console.ReadLine();
+
+        int overrides = 0;
+        foreach (string dir in directories) 
         {
-            File.WriteAllText(saveFile, data);
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Bravo! Dein Inventar erfolgreich wurde überschrieben!");
-            Console.ReadKey();
+            string fullPath = Path.Combine(dir, path);
+            string[] saveFiles = Directory.GetFiles(fullPath, "PlayerInventorySaveData.json", SearchOption.AllDirectories);
+            if (saveFiles == null || saveFiles.Length == 0) continue;
+
+            foreach (string saveFile in saveFiles)
+            {
+                File.WriteAllText(saveFile, data);
+                overrides++;
+            }
         }
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"Bravo! Es wurden {overrides} Savefiles überschrieben!");
+        Console.ReadLine();
     }
 }
