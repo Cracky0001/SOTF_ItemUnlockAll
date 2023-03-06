@@ -23,7 +23,7 @@ _ ___ ____ _  _    _  _ _  _ _    ____ ____ _  _ ____ ____
         string path = Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\AppData\LocalLow\Endnight\SonsOfTheForest\Saves");
         string[] directories = Directory.GetDirectories(path);
 
-        Console.WriteLine("Wie lautet deine SaveGame ID? Du findest sie unter C:\\Users\\(Dein Name)\\AppData\\LocalLow\\Endnight\\SonsOfTheForest\\Saves\\(Deine ID)\\MultiplayerClient");
+        Console.WriteLine("Wie lautet deine SaveGame ID? Du findest sie unter C:\\Users\\(Dein Name)\\AppData\\LocalLow\\Endnight\\SonsOfTheForest\\Saves\\(Deine ID)\\(Dein Speicherstand)");
         string SaveGameId = Console.ReadLine();
 
         int overrides = 0;
