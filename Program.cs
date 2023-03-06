@@ -29,14 +29,20 @@ _ ___ ____ _  _    _  _ _  _ _    ____ ____ _  _ ____ ____
         int overrides = 0;
         foreach (string dir in directories) 
         {
-            string fullPath = Path.Combine(dir, path);
-            string[] saveFiles = Directory.GetFiles(fullPath, "PlayerInventorySaveData.json", SearchOption.AllDirectories);
-            if (saveFiles == null || saveFiles.Length == 0) continue;
-
-            foreach (string saveFile in saveFiles)
+            string[] Typedirectories = Directory.GetDirectories(dir);
+            foreach (string typeDir in Typedirectories) 
             {
-                File.WriteAllText(saveFile, data);
-                overrides++;
+                if (!Directory.Exists(typeDir + "\\" + SaveGameId)) continue;
+
+                string fullPath = Path.Combine(typeDir, SaveGameId);
+                string[] saveFiles = Directory.GetFiles(fullPath, "PlayerInventorySaveData.json", SearchOption.AllDirectories);
+                if (saveFiles == null || saveFiles.Length == 0) continue;
+
+                foreach (string saveFile in saveFiles)
+                {
+                    File.WriteAllText(saveFile, data);
+                    overrides++;
+                }
             }
         }
 
