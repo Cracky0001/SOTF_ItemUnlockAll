@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Net;
+﻿using System.Net;
 
 class Program
 {
@@ -20,29 +17,18 @@ _ ___ ____ _  _    _  _ _  _ _    ____ ____ _  _ ____ ____
                                                                                          
 ");
         
-
-        var username = Environment.UserName;
-        Console.WriteLine("Gib den Pfad zum Speicherordner ein:");
-        Console.ForegroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine("Beispiel: C:\\Users\\" + username + "\\AppData\\LocalLow\\SonsOfTheForest\\Saves\\YourSteamUserID\\1234567890");
-        Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine("Hinweis: Du kannst den Ordner auch einfach per Drag & Drop in die Konsole ziehen.");
-        string path = System.Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\AppData\LocalLow\Endnight\SonsOfTheForest\Saves");
-        Process.Start("explorer.exe", path);
-        var savesPath = Console.ReadLine();
-
-        var saveFiles = Directory.GetFiles(savesPath, "PlayerInventorySaveData.json", SearchOption.AllDirectories);
+        string path = Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\AppData\LocalLow\Endnight\SonsOfTheForest\Saves");
+        string[] saveFiles = Directory.GetFiles(path, "PlayerInventorySaveData.json", SearchOption.AllDirectories);
         if (saveFiles.Length == 0)
         {
             Console.WriteLine("Keine PlayerInventorySaveData.json-Dateien gefunden.");
             return;
         }
 
-        var url = "https://raw.githubusercontent.com/Cracky0001/SOTF_ItemUnlockAll/main/Content/PlayerInventorySaveData.json";
-        var webClient = new WebClient();
-        var data = webClient.DownloadString(url);
+        WebClient webClient = new();
+        string data = webClient.DownloadString("https://raw.githubusercontent.com/Cracky0001/SOTF_ItemUnlockAll/main/Content/PlayerInventorySaveData.json"); // vll hier custom files supporten statt deine forcen zu downloaden
 
-        foreach (var saveFile in saveFiles)
+        foreach (string saveFile in saveFiles)
         {
             File.WriteAllText(saveFile, data);
             Console.ForegroundColor = ConsoleColor.Green;
