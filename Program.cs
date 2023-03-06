@@ -27,7 +27,7 @@ _ ___ ____ _  _    _  _ _  _ _    ____ ____ _  _ ____ ____
         Console.WriteLine("Beispiel: C:\\Users\\" + username + "\\AppData\\LocalLow\\SonsOfTheForest\\Saves\\YourSteamUserID\\1234567890");
         Console.ForegroundColor = ConsoleColor.DarkYellow;
         Console.WriteLine("Hinweis: Du kannst den Ordner auch einfach per Drag & Drop in die Konsole ziehen.");
-        string path = "C:\\Users\\mirco\\AppData\\LocalLow\\Endnight\\SonsOfTheForest\\Saves";
+        string path = "C:\\Users\\" + username + "\\AppData\\LocalLow\\Endnight\\SonsOfTheForest\\Saves";
         Process.Start("explorer.exe", path);
         var savesPath = Console.ReadLine();
 
