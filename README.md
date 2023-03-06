@@ -17,8 +17,8 @@ Bist du zu faul, um im Spiel alle Gegenstände freizuschalten? Dann ist dieses P
 
 ## Hinweise: Kein Stress, kein Problem
 
-- Das Programm verwendet die Steamworks-API, also musst du das Spiel über Steam gestartet haben, um es zu verwenden.
-- Du musst dich im Spiel anmelden, bevor du das Programm ausführst. Aber hey, das sollte kein Problem sein, oder?
+- Das Programm verwendet die Steamworks-API, also musst du das Spiel über Steam gestartet haben, um es zu verwenden... nee hab dich bloß verarscht!
+- Du solltest das Spiel schließen, bevor du das Programm ausführst. Aber hey, das sollte kein Problem sein, oder?
 - Das Programm wird dein Inventar überschreiben, also vergewissere dich, dass du vorher eine Sicherungskopie hast. Oder vertraue einfach darauf, dass alles gut geht - YOLO, oder?
 
 ## Autor: Der faulste Programmierer aller Zeiten
