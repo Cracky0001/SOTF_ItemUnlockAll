@@ -1,6 +1,6 @@
 # SOTF Item Unlocker: Hol dir alle Items ohne Mühe!
 
-Bist du zu faul, um im Spiel alle Gegenstände freizuschalten? Dann ist dieses Programm genau das Richtige für dich!
+Bist du zu faul, um im Spiel alle Gegenstände sammeln und in den Höhlen ehlendig zu krepieren? Dann ist dieses Programm genau das Richtige für dich!
 
 ## Installation: So einfach wie ein Nickerchen
 
