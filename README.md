@@ -27,4 +27,4 @@ Ich habe nicht viel getan, außer ein paar Zeilen Code zu kopieren und einzufüg
 
 ## Lizenz: Einfach und unkompliziert
 
-Dieses Programm ist unter der WTFPL (Do What The Fuck You Want To Public License) lizenziert. Du kannst damit machen, was du willst. Aber bitte sei kein Idiot und beschuldige den mich nicht, wenn irgendwas schiefgeht. Sollte das der Fall sein haste einfach gelitten!
+Dieses Programm ist unter der WTFPL (Do What The Fuck You Want To Public License) lizenziert. Du kannst damit machen, was du willst. Aber bitte sei kein Idiot und beschuldige mich nicht, wenn irgendwas schiefgeht. Sollte das der Fall sein haste einfach gelitten!
